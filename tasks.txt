@@ -1,19 +1,26 @@
 layout
 page one
-"welcome to wizard rpg, type your name"
-[input box]
-wizard photo
+	"welcome to wizard rpg, type your name"
+	[input box]
+	wizard photo
 
 page 2
-player:
-wizard photo
-health int
-magic int
-attack button
-defend button
+	player:
+	wizard photo
+	health int
+	magic int
+	attack button
+	defend button
 
-Ai: {have the same aspects as the player}
+	Ai: {have the same aspects as the player}
 
-after the game is over
-[you won!/dead!
-back to main menu]
+	after the game is over
+	[you won!/dead!
+	back to main menu]
+
+gameplay
+	attack: will subtract ai health if ai does not defend
+	defend: defender will gain some health, and lose magic
+	if both players attack, both will lose only health.
+	if both players deffend, nothing will happen.
+		
