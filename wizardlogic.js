@@ -31,7 +31,29 @@ bot attacked, you lost 10hp`);
 		botVal.health += 3;
 		botVal.magic -= 20;
 		alert(`you attacked, you lost 3 magic
-bot defends, bot lost 20 magic, bot gain 3hp`)
+bot defends, bot lost 20 magic but gained 3hp`)
+	}
+
+	
+	updateGame();
+}
+
+function deffendPlayer() {
+
+	let valDecide = Math.floor(Math.random() * 2) //returns random number between 0 and 1
+	if(valDecide < 1) {
+		//bot attacks
+		playerVal.magic -= 20;
+		playerVal.health += 3;
+		botVal.magic -= 3;
+		alert(`you deffended, you lost 20 magic and gained 3hp
+bot attacks, bot lost 3 magic,`)
+
+	} 
+	else {
+		
+		//bot deffends
+		alert("both defended, nothing happend");
 	}
 
 	
