@@ -10,13 +10,14 @@ let botVal = {
 
 
 function endGame() {
+
 	if(playerVal.health < 1 || playerVal.magic < 1) {
 		document.getElementById('endGameId').innerText = 'Dead!';
-	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
+	} 
+	else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
 		document.getElementById('endGameId').innerText = 'Victorious!';	
 	}
 }
-
 
 function zeroHandler() {
 
@@ -32,7 +33,7 @@ function zeroHandler() {
 	if(botVal.magic < 1) {
 			botVal.magic = 0;
 		}	
-}
+
 function updateGame() {
 	document.getElementById('playerHealth').innerText = `health: ${playerVal.health}`;
 	document.getElementById('playerMagic').innerText = `magic: ${playerVal.magic}`;
@@ -43,6 +44,7 @@ function updateGame() {
 function attackBot() {
 
 	let valDecide = Math.floor(Math.random() * 2) //returns random number between 0 and 1
+
 	if(valDecide < 1) {
 		//bot attacks
 		botVal.health -= 10;
@@ -50,6 +52,7 @@ function attackBot() {
 		alert(`you attacked, bot lost 10hp
 bot attacked, you lost 10hp`);
 	} 
+
 	else {
 		//bot defend
 		playerVal.magic -= 3;
@@ -67,6 +70,7 @@ bot defends, bot lost 20 magic but gained 3hp`)
 function deffendPlayer() {
 
 	let valDecide = Math.floor(Math.random() * 2) //returns random number between 0 and 1
+
 	if(valDecide < 1) {
 		//bot attacks
 		playerVal.magic -= 20;
@@ -74,27 +78,14 @@ function deffendPlayer() {
 		botVal.magic -= 3;
 		alert(`you deffended, you lost 20 magic and gained 3hp
 bot attacks, bot lost 3 magic,`)
-
 	} 
-	else {
-		
+
+	else {	
 		//bot deffends
 		alert("both defended, nothing happend");
-	}
-
+	}	
 	
 	updateGame();
 }
-
-function botReact() {
-	let valDecide = Math.floor(Math.random() * 2); //returns random number between 0 and 1
-	if(valDecide === 0) {
-		//bot attack
-	} else {
-		//bot defend
-	}
-}
-
-
 
 updateGame();
