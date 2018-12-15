@@ -8,14 +8,6 @@ let botVal = {
 	magic:100
 };
 
-function endGame() {
-	if(playerVal.health < 1 || playerVal.magic < 1) {
-		document.getElementById('endGameId').innerText = 'Dead!';
-	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
-		document.getElementById('endGameId').innerText = 'Victorious!';	
-	}
-}
-
 function zeroHandler() {
 
 	if(playerVal.health < 1) {
@@ -31,6 +23,16 @@ function zeroHandler() {
 			botVal.magic = 0;
 		}	
 }
+
+function endGame() {
+	if(playerVal.health < 1 || playerVal.magic < 1) {
+		document.getElementById('endGameId').innerText = 'Dead!';
+	} 
+	else if ((playerVal.health > 0 && playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
+		document.getElementById('endGameId').innerText = 'Victorious!';	
+	}
+}
+
 
 function updateGame() {
 	document.getElementById('playerHealth').innerText = `health: ${playerVal.health}`;
@@ -83,7 +85,9 @@ bot attacks, bot lost 3 magic,`);
 		//bot deffends
 		alert("both defended, nothing happend");
 	}
-
+	
+	zeroHandler();
+	endGame();
 	updateGame();
 }
 
