@@ -8,11 +8,16 @@ let botVal = {
 	magic:100
 };
 
-/*
+
 function endGame() {
-	if(playerVal.health < 1 || playerVal.magic < 1)
+	if(playerVal.health === 0 || playerVal.magic === 0) {
+		document.getElementById('endGameId').innerText = 'Dead!';
+	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 0 || botVal.magic < 0)) {
+		document.getElementById('endGameId').innerText = 'Victorious!';	
+	}
 }
-*/
+
+
 function zeroHandler() {
 
 	if(playerVal.health < 1) {
@@ -24,7 +29,7 @@ function zeroHandler() {
 	if(botVal.health < 1) {
 			botVal.health = 0;
 		}
-	if(playerVal.magic < 1) {
+	if(botVal.magic < 1) {
 			botVal.magic = 0;
 		}	
 }
@@ -55,6 +60,7 @@ bot defends, bot lost 20 magic but gained 3hp`)
 	}
 
 	zeroHandler();
+	endGame();
 	updateGame();
 }
 
