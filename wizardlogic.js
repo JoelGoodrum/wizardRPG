@@ -12,7 +12,7 @@ let botVal = {
 function endGame() {
 	if(playerVal.health === 0 || playerVal.magic === 0) {
 		document.getElementById('endGameId').innerText = 'Dead!';
-	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 0 || botVal.magic < 0)) {
+	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
 		document.getElementById('endGameId').innerText = 'Victorious!';	
 	}
 }
