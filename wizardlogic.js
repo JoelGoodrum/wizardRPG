@@ -8,13 +8,10 @@ let botVal = {
 	magic:100
 };
 
-
 function endGame() {
-
 	if(playerVal.health < 1 || playerVal.magic < 1) {
 		document.getElementById('endGameId').innerText = 'Dead!';
-	} 
-	else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
+	} else if ((playerVal.health > 0 || playerVal.magic > 0) && (botVal.health < 1 || botVal.magic < 1)) {
 		document.getElementById('endGameId').innerText = 'Victorious!';	
 	}
 }
@@ -33,6 +30,7 @@ function zeroHandler() {
 	if(botVal.magic < 1) {
 			botVal.magic = 0;
 		}	
+}
 
 function updateGame() {
 	document.getElementById('playerHealth').innerText = `health: ${playerVal.health}`;
@@ -59,7 +57,7 @@ bot attacked, you lost 10hp`);
 		botVal.health += 3;
 		botVal.magic -= 20;
 		alert(`you attacked, you lost 3 magic
-bot defends, bot lost 20 magic but gained 3hp`)
+bot defends, bot lost 20 magic but gained 3hp`);
 	}
 
 	zeroHandler();
@@ -77,14 +75,15 @@ function deffendPlayer() {
 		playerVal.health += 3;
 		botVal.magic -= 3;
 		alert(`you deffended, you lost 20 magic and gained 3hp
-bot attacks, bot lost 3 magic,`)
+bot attacks, bot lost 3 magic,`);
+
 	} 
 
-	else {	
+	else {
 		//bot deffends
 		alert("both defended, nothing happend");
-	}	
-	
+	}
+
 	updateGame();
 }
 
