@@ -8,6 +8,26 @@ let botVal = {
 	magic:100
 };
 
+/*
+function endGame() {
+	if(playerVal.health < 1 || playerVal.magic < 1)
+}
+*/
+function zeroHandler() {
+
+	if(playerVal.health < 1) {
+			playerVal.health = 0;
+		}
+	if(playerVal.magic < 1) {
+			playerVal.magic = 0;
+		}
+	if(botVal.health < 1) {
+			botVal.health = 0;
+		}
+	if(playerVal.magic < 1) {
+			botVal.magic = 0;
+		}	
+}
 function updateGame() {
 	document.getElementById('playerHealth').innerText = `health: ${playerVal.health}`;
 	document.getElementById('playerMagic').innerText = `magic: ${playerVal.magic}`;
@@ -34,7 +54,7 @@ bot attacked, you lost 10hp`);
 bot defends, bot lost 20 magic but gained 3hp`)
 	}
 
-	
+	zeroHandler();
 	updateGame();
 }
 
