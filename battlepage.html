@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-		<style>
-			.wrapper {
-				display:grid;
-				grid-template-columns: 60% 40%;
-			}
+	<style>
 
-		</style>
+		.wrapper {
+			display:grid;
+			grid-template-columns: 40% 20% 40%;
+		} 
+
+	</style> 
 
 	<head>
 		<title>Wizard RPG | arena</title>
@@ -16,7 +17,7 @@
 	<body>
 		<div = class="wrapper">
 
-		<div style="padding:30px;">
+		<div style="padding:20px;">
 			<h2>Sorcerer (player)</h2>
 			<img src="https://i.etsystatic.com/7202307/r/il/14f239/1612501976/il_570xN.1612501976_iuq5.jpg" style="width:420px; height:320px">
 			<h2 style="color:red;" id="playerHealth"></h2>
@@ -24,13 +25,24 @@
 			<button id='attackButton' onclick="attackBot();">Attack</button>
 			<button id='deffendButton' onclick="deffendPlayer();">Deffend</button>
 			<h3 id="endGameId"></h3>
+
 		</div>
 
-		<div style="padding: 30px;">
+		<div>
+			<p style="padding-top: 70px; font-size: 20px; margin-left: -60px;">
+			<b>Attack succesfully and you will remove 10hp from your opponent.
+			Defend succesfully and you will lose 20mp but will gain 3hp.
+			Bring your opponent to zero hp or zero mp to be victorious!</b></p>
+		</div>
+				
+		<div style="padding:20px">
+
 			<h2>Snow Mage (bot)</h2>
-			<img src="https://ae01.alicdn.com/kf/HTB1UIJ_IuGSBuNjSspbq6AiipXay/DIY-frame-Snow-Mage-Horns-Sorcerer-Helmets-Swords-Fantasy-Artwork-Fabric-Silk-Poster-Print-Picture-For.jpg_640x640.jpg" style="width:420px; height: 320px;">
+			<img src="https://ae01.alicdn.com/kf/HTB1UIJ_IuGSBuNjSspbq6AiipXay/DIY-frame-Snow-Mage-Horns-Sorcerer-Helmets-Swords-Fantasy-Artwork-Fabric-Silk-Poster-Print-Picture-For.jpg_640x640.jpg" 
+			style="width:420px;height: 320px;">
 			<h2 style="color:red;" id="botHealth"></h2>
 			<h2 style="color:blue;" id="botMagic"></h2>
+
 		</div>
 
 		<script src="wizardlogic.js"></script>
